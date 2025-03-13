@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Construtor de Páginas Web</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Construtor de Páginas Web</h1>
+        <nav>
+          <ul>
+            <li><a href="#" data-page="home" class="active">Pagina Inicial</a></li>
+            <li><a href="#" data-page="products">Produtos</a></li>
+            <li><a href="#" data-page="contact">Contatos</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="builder-section">
+          <h2>Criador de elementos</h2>
+          <form id="element-form">
+            <div class="form-group">
+              <label for="tag-select">HTML Tag:</label>
+              <select id="tag-select" required>
+                <option value="div">div</option>
+                <option value="p">p</option>
+                <option value="h1">h1</option>
+                <option value="h2">h2</option>
+                <option value="h3">h3</option>
+                <option value="img">img</option>
+                <option value="button">button</option>
+                <option value="a">a</option>
+                <option value="ul">ul</option>
+                <option value="ol">ol</option>
+                <option value="li">li</option>
+                <option value="span">span</option>
+                <option value="input">input</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="attributes">Attributos (JSON):</label>
+              <textarea
+                id="attributes"
+                placeholder='{"id": "my-element", "class": "custom-class"}'></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="styles">Styles (JSON):</label>
+              <textarea
+                id="styles"
+                placeholder='{"color": "red", "font-size": "16px"}'></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="content">Conteudo:</label>
+              <textarea
+                id="content"
+                placeholder="Element content here"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="target-selector">Selecione onde irá inserir o html:</label>
+              <input
+                type="text"
+                id="target-selector"
+                placeholder="#dynamic-content"
+                value="#dynamic-content" />
+            </div>
+
+            <button type="submit">Adicionar elemento</button>
+          </form>
+        </section>
+
+        <section class="preview-section">
+          <div id="dynamic-content" class="dynamic-content">
+            <!-- Dynamic content will be loaded here -->
+            <div class="page" id="home">
+              <h2>Bem vindo a pagina inicial!</h2>
+            </div>
+            <div class="page" id="products" style="display: none">
+              <h2>Pagina de Produtos</h2>
+              <p>Adicione seus produtos aqui!</p>
+            </div>
+            <div class="page" id="contact" style="display: none">
+              <h2>Pagina de contatos</h2>
+              <p>adicione seus contatos aqui!</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
